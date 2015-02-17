@@ -65,29 +65,17 @@ println "Installing Brew Cask..."
   brew tap caskroom/cask
   brew_install_or_upgrade 'caskroom/cask/brew-cask'
 
+println "Installing Bash..."
+  brew_install_or_upgrade 'bash'
+
 println "Installing Postgres..."
   brew_install_or_upgrade 'postgres' '--no-python'
-
-println "Installing Postgres.app..."
-  brew cask install postgres
 
 println "Installing Redis..."
   brew_install_or_upgrade 'redis'
 
-println "Installing PhantomJS..."
-  brew_install_or_upgrade 'phantomjs'
-
 println "Installing MySQL..."
   brew_install_or_upgrade 'mysql'
-
-println "Installing ImageMagick, to crop and resize images..."
-  brew_install_or_upgrade 'imagemagick'
-
-println "Installing QT, used by Capybara Webkit for integration testing..."
-  brew_install_or_upgrade 'qt'
-
-println "Installing ChromeDriver, to drive Chrome via Selenium..."
-  brew_install_or_upgrade 'chromedriver'
 
 println "Installing Git..."
   brew_install_or_upgrade 'git'
@@ -119,10 +107,6 @@ else
   println "Rvm already installed. Skipping..."
 fi
 
-println "Upgrading and linking OpenSSL..."
-  brew_install_or_upgrade 'openssl'
-  brew unlink openssl && brew link openssl --force
-
 ruby_version=2.2.0
 
 println "Installing Ruby $ruby_version..."
@@ -145,7 +129,7 @@ println "Installing the heroku-config plugin to pull config variables locally to
 println "Installing a bunch of apps, this migth take a while depending on the
         number of your apps and your ISP speed..."
   brew cask install adobe-photoshop-lightroom, cloudup, flux, google-chrome,
-                    mou, sequel-pro, sketch, skype, slack, spotify, 
+                    mou, sequel-pro, sketch, slack, spotify, 
                     sublime-text, subtitles, telegram, transmission, transmit, 
                     vagrant, virtualbox, vlc
  
