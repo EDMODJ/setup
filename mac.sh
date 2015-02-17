@@ -80,8 +80,8 @@ println "Installing Redis..."
 println "Installing MySQL..."
   brew_install_or_upgrade 'mysql'
 
-println "Installing MongoDB…”
-  brew_install_or_upgrade ‘mongo’
+println "Installing MongoDB...."
+  brew_install_or_upgrade 'mongo'
 
 node_version="stable"
 
