@@ -128,8 +128,5 @@ println "Installing the heroku-config plugin to pull config variables locally to
   
 println "Installing a bunch of apps, this migth take a while depending on the
         number of your apps and your ISP speed..."
-  brew cask install adobe-photoshop-lightroom, cloudup, flux, google-chrome,
-                    mou, sequel-pro, sketch, slack, spotify, 
-                    sublime-text, subtitles, telegram, transmission, transmit, 
-                    vagrant, virtualbox, vlc
+  brew cask install adobe-photoshop-lightroom, cloudup, flux, google-chrome, mou, sequel-pro, sketch, slack, spotify, sublime-text, subtitles, telegram, transmission, transmit, vagrant, virtualbox, vlc
  
