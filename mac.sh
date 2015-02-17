@@ -80,7 +80,7 @@ println "Installing Redis..."
 println "Installing MySQL..."
   brew_install_or_upgrade 'mysql'
 
-println "Installing MongoDB..."
+println "Installing MongoDB…”
   brew_install_or_upgrade ‘mongo’
 
 node_version="stable"
@@ -130,5 +130,8 @@ println "Installing the heroku-config plugin to pull config variables locally to
   heroku plugins:install git://github.com/ddollar/heroku-config.git
   
 println "Installing a bunch of apps, this migth take a while depending on the number of your apps and your ISP speed..."
-  brew cask install alfred adobe-photoshop-lightroom cloudup flux google-chrome mou sequel-pro sketch slack spotify sublime-text subtitles telegram transmission transmit vagrant virtualbox vlc
+  brew cask install adobe-photoshop-lightroom alfred amethyst cloudup flux google-chrome mou sequel-pro sketch slack spotify sublime-text subtitles telegram transmission transmit vagrant virtualbox vlc
  
+println "Cleanup..."
+ brew cleanup
+ brew cask cleanup
