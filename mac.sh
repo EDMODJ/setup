@@ -46,7 +46,7 @@ brew_is_upgradable() {
 
 if ! command -v brew &>/dev/null; then
   println "The missing package manager for OS X"
-    ruby <(curl -fsS https://raw.githubusercontent.com/Homebrew/homebrew/go/install)
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
   if ! grep -qs "recommended by brew doctor" ~/.bashrc; then
     println "Put Homebrew location earlier in PATH..."
@@ -64,21 +64,6 @@ brew update
 println "Installing Brew Cask..."
   brew tap caskroom/cask
   brew_install_or_upgrade 'caskroom/cask/brew-cask'
-
-println "Installing Firefox..."
-  brew cask install firefox
-
-println "Installing Github..."
-  brew cask install github
-
-println "Installing Atom..."
-  brew cask install atom
-
-println "Installing Slack..."
-  brew cask install slack
-
-println "Installing Spotify..."
-  brew cask install spotify
 
 println "Installing Postgres..."
   brew_install_or_upgrade 'postgres' '--no-python'
@@ -107,7 +92,7 @@ println "Installing ChromeDriver, to drive Chrome via Selenium..."
 println "Installing Git..."
   brew_install_or_upgrade 'git'
 
-node_version="0.10"
+node_version="stable"
 
 println "Installing NVM, Node.js, and NPM, for running apps and installing JavaScript packages..."
   brew_install_or_upgrade 'nvm'
@@ -138,7 +123,7 @@ println "Upgrading and linking OpenSSL..."
   brew_install_or_upgrade 'openssl'
   brew unlink openssl && brew link openssl --force
 
-ruby_version="2.1.2"
+ruby_version=2.2.0
 
 println "Installing Ruby $ruby_version..."
   rvm install "$ruby_version"
@@ -156,3 +141,11 @@ println "Installing Heroku CLI client..."
 
 println "Installing the heroku-config plugin to pull config variables locally to be used as ENV variables..."
   heroku plugins:install git://github.com/ddollar/heroku-config.git
+  
+println "Installing a bunch of apps, this migth take a while depending on the
+        number of your apps and your ISP speed..."
+  brew cask install adobe-photoshop-lightroom, cloudup, flux, google-chrome,
+                    mou, sequel-pro, sketch, skype, slack, spotify, 
+                    sublime-text, subtitles, telegram, transmission, transmit, 
+                    vagrant, virtualbox, vlc
+ 
