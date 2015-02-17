@@ -65,6 +65,9 @@ println "Installing Brew Cask..."
   brew tap caskroom/cask
   brew_install_or_upgrade 'caskroom/cask/brew-cask'
 
+println "Installing Git..."
+  brew_install_or_upgrade 'git'
+
 println "Installing Bash..."
   brew_install_or_upgrade 'bash'
 
@@ -77,8 +80,8 @@ println "Installing Redis..."
 println "Installing MySQL..."
   brew_install_or_upgrade 'mysql'
 
-println "Installing Git..."
-  brew_install_or_upgrade 'git'
+println "Installing MongoDB..."
+  brew_install_or_upgrade ‘mongo’
 
 node_version="stable"
 
@@ -126,7 +129,6 @@ println "Installing Heroku CLI client..."
 println "Installing the heroku-config plugin to pull config variables locally to be used as ENV variables..."
   heroku plugins:install git://github.com/ddollar/heroku-config.git
   
-println "Installing a bunch of apps, this migth take a while depending on the
-        number of your apps and your ISP speed..."
-  brew cask install adobe-photoshop-lightroom, cloudup, flux, google-chrome, mou, sequel-pro, sketch, slack, spotify, sublime-text, subtitles, telegram, transmission, transmit, vagrant, virtualbox, vlc
+println "Installing a bunch of apps, this migth take a while depending on the number of your apps and your ISP speed..."
+  brew cask install alfred adobe-photoshop-lightroom cloudup flux google-chrome mou sequel-pro sketch slack spotify sublime-text subtitles telegram transmission transmit vagrant virtualbox vlc
  
